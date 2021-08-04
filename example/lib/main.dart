@@ -27,16 +27,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-
   void _updateIcon() async {
     await FlutterIconSwitcher.updateIcon('ALT');
   }
 
-  void _resetIcon() async { 
+  void _resetIcon() async {
     await FlutterIconSwitcher.resetIcon();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,13 +44,18 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RaisedButton(onPressed: _updateIcon, child: Text("CHANGE ICON"),),
-              RaisedButton(onPressed: _resetIcon, child: Text("RESET ICON"),),
-            ]
-          ),
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: _updateIcon,
+                  child: Text("CHANGE ICON"),
+                ),
+                ElevatedButton(
+                  onPressed: _resetIcon,
+                  child: Text("RESET ICON"),
+                ),
+              ]),
         ),
       ),
     );
